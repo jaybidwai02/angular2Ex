@@ -1,9 +1,10 @@
+import { NgModule } from '@angular/core';
 import {HomeComponent} from './home/home.component';
 import {ContactComponent} from './contact/contact.component';
 import {MyformComponent} from './myform/myform.component';
 // import { HttpClient } from '@angular/common/http';
 
-import {Routes} from '@angular/router';
+import { RouterModule ,Routes} from '@angular/router';
 
 export const APP_ROUTES: Routes = [
 	{path:'', component: HomeComponent},
@@ -11,6 +12,16 @@ export const APP_ROUTES: Routes = [
 	{path: 'myform', component: MyformComponent}
 ];
 
-/*export const APP_ROUTES_PROVIDER = [
-	provideRouter(APP_ROUTES)
-];*/
+@NgModule({
+	imports:[
+		RouterModule.forRoot(
+			APP_ROUTES,
+			{ enableTracing: true }
+		)
+	],
+	exports:[RouterModule]
+})
+
+export class AppRouteModule{};
+
+export const routingComponents = [HomeComponent, ContactComponent, MyformComponent];
