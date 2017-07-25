@@ -9,6 +9,8 @@ import { ContactComponent } from './contact/contact.component';
 import { APP_ROUTES } from './app.route';
 import { RouterModule } from '@angular/router';
 import { MyformComponent } from './myform/myform.component';
+import { MyFormResolver } from './myform/myform.resolver';
+import { UserProfileService } from './myform/myform.service';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -29,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
 		{ enableTracing: true } // <-- debugging purposes only
 	)
   ],
-  providers: [],
+  providers: [MyFormResolver,UserProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

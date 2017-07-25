@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { UserProfileService } from './myform.service';
+
+import { ActivatedRoute } from '@angular/router';
+//import 'rxjs/add/operator/pluck';
 
 @Component({
   selector: 'app-myform',
   templateUrl: './myform.component.html',
   styleUrls: ['./myform.component.css'],
-  providers: [UserProfileService]
+  providers: []
 })
 export class MyformComponent implements OnInit {
 
@@ -26,7 +28,7 @@ export class MyformComponent implements OnInit {
   	country:{}
   };
 
-  constructor(private http: HttpClient, private userPro: UserProfileService ) { }
+  constructor(private http: HttpClient, private activeRoute: ActivatedRoute ) { }
 
 
 
@@ -74,12 +76,16 @@ export class MyformComponent implements OnInit {
   		this.userData = res['userProfile'];
   	});*/
 
-  	// console.log(this.userPro.getUserData());
+  	console.log('my form');
 
-  	this.userPro.getUserData().subscribe(res =>{
+  	console.log(this.activeRoute);
+
+  	/*this.userPro.getUserData().subscribe(res =>{
   		console.log(res);
   		this.userData = res['userProfile'];
-  	})
+  	})*/
+
+  	//console.log(this.activeRoute.data.pluck('userDataProfile'))
   }
 
 }
