@@ -1,0 +1,11 @@
+{
+	"userProfile": {
+		"fname":"Jayyyy",
+		"lname":"Bidwai",
+		"age":26,
+		"country":{
+			"id":2,
+			"name":"UAE"
+		}
+	}
+}

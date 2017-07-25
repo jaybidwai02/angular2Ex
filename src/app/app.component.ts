@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  custData = {
+  	name:'Jay',
+  	age:26
+  }
+
+  show(event){
+  	alert('I am from show')
+  }
 }
