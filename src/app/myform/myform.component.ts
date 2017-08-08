@@ -23,7 +23,7 @@ export class MyformComponent implements OnInit {
 	]
 
   userData = {
-  	country:{}
+  	
   };
 
   constructor(private http: HttpClient, private userPro: UserProfileService ) { }
@@ -80,6 +80,12 @@ export class MyformComponent implements OnInit {
   		console.log(res);
   		this.userData = res['userProfile'];
   	})
+  }
+
+  ngOnChanges(f,s){
+    console.log('in onChanges');
+    console.log(f);
+    console.log(s);
   }
 
 }

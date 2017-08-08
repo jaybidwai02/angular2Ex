@@ -1,13 +1,41 @@
-<p>
+<p [ngClass]="classes" [ngStyle]="componentStyle">
   home works!
 
   {{homeTitle}}
 </p>
+
+
+<!-- <div [ngSwitch]="switchRouting.name">
+	<p *ngSwitchCase="'first'">first</p>
+	<p *ngSwitchCase="'second'">Second</p>
+	<p *ngSwitchCase="'third'">third</p>
+</div> -->
+
+<div [ngSwitch]="switchRouting.name">
+	<p *ngSwitchCase="1">first</p>
+	<p *ngSwitchCase="2">Second</p>
+	<p *ngSwitchCase="3">third</p>
+</div>
 
 <!-- <P>I am {{data.name}} and I am {{data.age}} year old</P> -->
 
 <input type="text" [value]="inpVal">
 <input type="text" value="{{inpVal1}}">
 
+<h2 class="home">Life Cycle hooks</h2>
+<p>{{fnamef}}</p>
+<!-- <p>{{lname.name}}</p> -->
+<app-child [(fname)]="fnamef"></app-child>
+
 <button (click)="alertMe('I am clicked')">Click Me</button>
 <button (click)="showMsg($event)">Show</button>
+
+<ul>
+	<li *ngFor="let val of valueArr">{{val}}</li>
+</ul>
+
+<button (click)="start($event)">Start Oberver</button>
+
+<button [custClick]="directiveClick">Start Directive Click</button>
+
+
