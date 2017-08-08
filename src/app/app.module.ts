@@ -5,11 +5,12 @@ import { AppRouteModule, routingComponents } from './app.route';
 
 //chart.js
 import { ChartsModule } from 'ng2-charts';
-
+import { CreditCardModule } from './credit-card/credit-card.module'
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ChartComponent } from './chart/chart.component';
+// import creditService from './credit-card/credit-card.service';
 
 
 
@@ -25,6 +26,7 @@ import { ChartComponent } from './chart/chart.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    CreditCardModule,
     AppRouteModule,
     ChartsModule
   ],

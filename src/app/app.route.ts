@@ -3,6 +3,7 @@ import {HomeComponent} from './home/home.component';
 import {ClickDirective} from './home/home.cust.directive';
 import {ContactComponent} from './contact/contact.component';
 import {MyformComponent} from './myform/myform.component';
+// import { CreditCardComponent } from './credit-card/credit-card.component';
 // import { HttpClient } from '@angular/common/http';
 
 import { ChildComponent } from './home/child/child.component';
@@ -12,6 +13,7 @@ import { RouterModule ,Routes} from '@angular/router';
 export const APP_ROUTES: Routes = [
 	{path:'', component: HomeComponent},
 	{path: 'contact', component: ContactComponent},
+	{path: 'credit', loadChildren: './credit-card/credit-card.module#CreditCardModule'},
 	{path: 'myform', component: MyformComponent}
 ];
 
